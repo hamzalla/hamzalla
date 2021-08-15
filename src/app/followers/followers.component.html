@@ -1,0 +1,19 @@
+<p>
+  followers works!
+</p>
+
+<ul class="list-group">
+
+  <li class="list-group-item" *ngFor="let follower of followers">
+    <p><a href="{{follower.received_events_url}}">
+        <img src="{{follower.avatar_url}}" width="150" height="150"/>
+      </a>
+    </p>
+    <p>{{follower.login}}</p>
+    <p>
+      <a [routerLink]="['/followers-details',follower.login, follower.id]"
+         [queryParams]="{type: follower.type, name:'hamza'}">{{follower.login}}</a>
+    </p>
+  </li>
+
+</ul>
